@@ -19,9 +19,7 @@ import PR from '../../assets/images/pr.svg';
 import UY from '../../assets/images/uy.svg';
 import VE from '../../assets/images/ve.svg';
 
-const CountriesList = () => {
-
-    const [selectedCountry, setSelectedCountry] = useState(null);
+const CountriesList = ({ selectedCountry, onCountryChange }) => {
 
     const countries = [
         { name: 'Argentina', value: 'AR', img: AR},
@@ -54,8 +52,16 @@ const CountriesList = () => {
 
     return (
         <div className="card flex justify-content-center">
-            <ListBox filter value={selectedCountry} onChange={(e) => setSelectedCountry(e.value)} options={countries} optionLabel="name" 
-                itemTemplate={countryTemplate} className="w-full md:w-14rem" listStyle={{ maxHeight: '250px' }} />
+             <ListBox
+                filter
+                value={selectedCountry}
+                onChange={(e) => onCountryChange(e.value)}
+                options={countries}
+                optionLabel="name"
+                itemTemplate={countryTemplate}
+                className="w-full md:w-14rem"
+                listStyle={{ maxHeight: '250px' }}
+            />
         </div>
     );
 };

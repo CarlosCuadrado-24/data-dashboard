@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-// import Graphic from './components/graphic/graphic.jsx';
 import Home from './views/home/home.jsx'
+import 'primereact/resources/themes/arya-green/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 
 function App() {
 
   return (
     <>
-      {/* <Graphic></Graphic> */}
       <Home></Home>
     </>
   )

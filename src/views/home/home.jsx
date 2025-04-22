@@ -1,29 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "./home.css";
 import CountriesList from "../../components/countrieslist/countrieslist";
+import Graphic from "../../components/graphic/graphic";
 
 const Home = () => {
-  return (
-    <>
-      <header className="header">
-        <h1>Grafica de enfermedades en America Latina</h1>
-      </header>
+    const [selectedCountry, setSelectedCountry] = useState("CO");
 
-      <main className="main">
-        <section className="layout">
-          <article className="sidebar">
-            
-            <CountriesList></CountriesList>
+    return (
+        <>
+            <header className="header">
+                <h1>Grafica de enfermedades en America Latina</h1>
+            </header>
 
-          </article>
-          
-          <article className="body">
+            <main className="main">
+                <section className="layout">
+                    <article className="sidebar">
+                        <CountriesList
+                            selectedCountry={selectedCountry}
+                            onCountryChange={setSelectedCountry}
+                        />
+                    </article>
 
-          </article>
-        </section>
-      </main>
-    </>
-  );
+                    <article className="body">
+                        <Graphic country={selectedCountry} />
+                    </article>
+                </section>
+            </main>
+        </>
+    );
 };
 
 export default Home;
