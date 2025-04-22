@@ -1,8 +1,7 @@
 import React from "react";
 import "./diseaseslist.css";
-import { ListBox } from 'primereact/listbox';
-const DiseasesList = ({ selectedDiase, onDiaseChange }) => {
 
+const DiseasesList = ({ selectedDiase, onDiaseChange }) => {
   const diases = [
     {
       name: 'VIH',
@@ -19,34 +18,22 @@ const DiseasesList = ({ selectedDiase, onDiaseChange }) => {
       indicator: 'SH.TBS.INCD',
       description: 'Incidencia de tuberculosis (por 100,000 personas)'
     }
-  ]
-
-  const diaseTemplate = (option) => {
-    return (
-      <div className="flex align-items-center">
-        <p>{option.name}</p>
-      </div>
-    );
-  };
+  ];
 
   return (
-    <div className="card flex justify-content-center">
-      <ListBox
-        value={selectedDiase}
-        onChange={(e) => {
-          const selected = e.value;
-          onDiaseChange({
-            name: selected.name,
-            indicator: selected.indicator,
-            description: selected.description
-          });
-        }}
-        options={diases}
-        optionLabel="name"
-        itemTemplate={diaseTemplate}
-        className="listboxdieses"
-        listStyle={{ maxHeight: '250px' }}
-      />
+    <div className="disease-menu">
+      <h4 className="title">Enfermedades</h4>
+      <ul className="disease-list">
+        {diases.map((diase) => (
+          <li
+            key={diase.indicator}
+            className={`disease-item ${selectedDiase?.indicator === diase.indicator ? 'active' : ''}`}
+            onClick={() => onDiaseChange(diase)}
+          >
+            {diase.name}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

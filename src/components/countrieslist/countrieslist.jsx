@@ -52,6 +52,7 @@ const CountriesList = ({ selectedCountry, onCountryChange }) => {
 
     return (
         <div className="card flex justify-content-center">
+            <h4>Paises</h4>
              <ListBox
                 filter
                 value={selectedCountry}
