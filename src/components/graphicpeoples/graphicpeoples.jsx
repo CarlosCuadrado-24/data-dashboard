@@ -30,9 +30,9 @@ const GraphicPeoples = ({ country, year }) => {
 
   return (
     <div style={{ width: '100%', height: 400 }}>
-      <h2 className="graphic-title">Población total por año</h2>
       <ResponsiveContainer>
-        <BarChart data={data}>
+        <BarChart data={data}
+        margin={{ left: 30}}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="year" />
           <YAxis />

@@ -1,7 +1,7 @@
 .main {
     min-height: 60vh;
     padding: 16px;
-    padding-top: 200px;
+    padding-top: 90px;
     display: flex;
     gap: 100px;
     justify-content: center;
@@ -12,7 +12,8 @@
 }
 
 body h2{
-    padding-left: 310px;
+    text-align: center;
+    font-size: 29px;    
 }
 
 .years{
@@ -42,9 +43,15 @@ body h2{
 
 .aside-right{
     padding-top: 50px;
+    display: flex;
+    gap: 70px;
+    flex-direction: column;
 }
 
 .aside-left{
     padding-top: 120px;
 }
 
+.graphic-people{
+    padding-top: 60px;
+}
