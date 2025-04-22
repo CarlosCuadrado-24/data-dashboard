@@ -3,7 +3,7 @@ import axios from 'axios';
 import {
   LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
 } from 'recharts';
-import { getDataBank } from '../../services/wordbankapi/bankapi';
+import { getDataBankDiseases } from '../../services/wordbankapi/bankapi';
 
 const Graphic = ({country,diase,year}) => {
   const [data, setData] = useState([]);
@@ -11,7 +11,7 @@ const Graphic = ({country,diase,year}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getDataBank(country,diase.indicator,year);
+        const response = await getDataBankDiseases(country,diase.indicator,year);
         console.log(response);
         const rawData = response.data[1];
 

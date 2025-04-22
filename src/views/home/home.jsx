@@ -3,6 +3,7 @@ import "./home.css";
 import CountriesList from "../../components/countrieslist/countrieslist";
 import Graphic from "../../components/graphic/graphic";
 import DiseasesList from "../../components/diseaseslist/diseaseslist";
+import GraphicPeoples from "../../components/graphicpeoples/graphicpeoples";
 
 const Home = () => {
     const [selectedCountry, setSelectedCountry] = useState("CO");
@@ -41,6 +42,9 @@ const Home = () => {
                         <button onClick={() => calculatedYear(25)}>25 Años</button>
                         <button onClick={() => calculatedYear(35)}>35 Años</button>
                     </div>
+
+                    <GraphicPeoples country={selectedCountry} year={selectedYear}/>
+
                 </article>
 
                 <article className="aside-left">
