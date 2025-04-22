@@ -5,13 +5,13 @@ import {
 } from 'recharts';
 import { getDataBank } from '../../services/wordbankapi/bankapi';
 
-const Graphic = ({ country }) => {
+const Graphic = ({country,diase,year}) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getDataBank(country,'SH.TBS.INCD','1990');
+        const response = await getDataBank(country,diase.indicator,year);
         console.log(response);
         const rawData = response.data[1];
 
@@ -30,11 +30,10 @@ const Graphic = ({ country }) => {
     };
 
     fetchData();
-  }, [country]);
+  },[country,diase,year]);
 
   return (
-    <div style={{ width: '70%', height: 400 }}>
-      <h2>Prevalencia de VIH en Colombia (% de población 15-49)</h2>
+    <div style={{ width: '100%', height: 400 }}>
       <ResponsiveContainer>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />

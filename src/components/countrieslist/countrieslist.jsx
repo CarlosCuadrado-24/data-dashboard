@@ -43,7 +43,7 @@ const CountriesList = ({ selectedCountry, onCountryChange }) => {
 
     const countryTemplate = (option) => {
         return (
-            <div className="flex align-items-center">
+            <div className="country">
                 <img alt={option.name} src={option.img}  style={{ width: '1.25rem', marginRight: '.5rem' }}/>
                 <div>{option.name}</div>
             </div>
@@ -59,7 +59,7 @@ const CountriesList = ({ selectedCountry, onCountryChange }) => {
                 options={countries}
                 optionLabel="name"
                 itemTemplate={countryTemplate}
-                className="w-full md:w-14rem"
+                className="listbox-countries"
                 listStyle={{ maxHeight: '250px' }}
             />
         </div>

@@ -1,14 +1,47 @@
-.header {
+.main {
+    min-height: 60vh;
+    padding: 16px;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+
+.body{
+    width: 60%;
+}
+
+body h2{
+    padding-left: 310px;
+}
+
+.years{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.years button{
+    padding: 8px 25px 8px 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.925);
+    color: black;
+    transition: all 0.4s ease;
+}
+
+.years button:hover{
+    transform: scale(1.05);
+    background-color: rgb(51,51,51);
     color: white;
 }
 
-.main {
-    /* flex: 1; */
-    min-height: 100vh;
-    padding: 16px;
-}
 
-.layout {
+
+/* .layout {
     width: 100%;
     height: 100vh;
     display: grid;
@@ -19,12 +52,10 @@
 
 .sidebar {
     grid-area: sidebar;
-    background-color: rgb(51,51,51);
     border-radius: 10px;
 }
 
 .body {
     grid-area: body;
-    background-color: rgb(51,51,51);
     border-radius: 10px;
-}
+} */

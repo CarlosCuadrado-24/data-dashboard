@@ -1,0 +1,32 @@
+.country {
+    display: flex;
+}
+
+
+.listbox-countries .p-listbox {
+    background-color: #1e1e1e;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    width: 200px;
+  }
+  
+  .listbox-countries .p-listbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e5e5e5;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .listbox-countries .p-listbox-item.p-highlight {
+    background-color: #e5e5e5;
+    color: #000;
+  }
+  
+  .listbox-countries .p-listbox-item:hover {
+    background-color: #333;
+  }
