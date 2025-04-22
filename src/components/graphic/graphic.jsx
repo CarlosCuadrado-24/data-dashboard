@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import {
   LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
 } from 'recharts';
 import { getDataBankDiseases } from '../../services/wordbankapi/bankapi';
 
-const Graphic = ({country,diase,year}) => {
-  const [data, setData] = useState([]);
-
+const Graphic = ({country,diase,year,data,setData}) => {
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -30,7 +28,7 @@ const Graphic = ({country,diase,year}) => {
     };
 
     fetchData();
-  },[country,diase,year]);
+  },[country,diase,year,setData]);
 
   return (
     <div style={{ width: '100%', height: 400 }}>

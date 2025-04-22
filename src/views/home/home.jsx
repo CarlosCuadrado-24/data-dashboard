@@ -4,6 +4,7 @@ import CountriesList from "../../components/countrieslist/countrieslist";
 import Graphic from "../../components/graphic/graphic";
 import DiseasesList from "../../components/diseaseslist/diseaseslist";
 import GraphicPeoples from "../../components/graphicpeoples/graphicpeoples";
+import ResumeData from "../../components/resumedata/resumedata";
 
 const Home = () => {
     const [selectedCountry, setSelectedCountry] = useState("CO");
@@ -18,6 +19,9 @@ const Home = () => {
         const newYear = new Date().getFullYear() - year;
         setselectedYear(newYear);
     };
+
+    const [data, setData] = useState([]);
+    
 
     return (
         <>
@@ -35,6 +39,8 @@ const Home = () => {
                         country={selectedCountry}
                         diase={selectedDiase}
                         year={selectedYear}
+                        data={data}
+                        setData={setData}
                     />
                     <div className="years">
                         <button onClick={() => calculatedYear(7)}>7 Años</button>
@@ -52,6 +58,7 @@ const Home = () => {
                         selectedDiase={selectedDiase}
                         onDiaseChange={setselectedDiase}
                     />
+                    <ResumeData data={data} diase={selectedDiase} />
                 </article>
             </main>
         </>
